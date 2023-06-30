@@ -4,7 +4,7 @@
 
 ## Imagens Docker
 
-- https://hub.docker.com -> repositório oficial de imagens
+- <https://hub.docker.com> -> repositório oficial de imagens
 - Se atentar as imagens que possuem o selo de oficial
 
 ### Criando uma imagem
@@ -159,20 +159,40 @@ docker run -d -p 3333:3333 --name app_node -it  edb2c3865443
 docker start -i <nome/id imagem>
 ```
 
-### Removendo Imagens 
+### Removendo Imagens
+
 ```bash
 docker rmi <image id>  
 # Caso a imagem esteja em uso
 docker rmi -f <image id>
 ```
+
 ### Removendo Imagens e Containers não utilizados
+
 ```bash
-docker sistem prune
+docker sistem prune 
 ```
 
 ### Removendo container após utilização
+
 - Utilizamos a flag:  `--rm`
 - O comando seria: `docker run --rm <container>`
 - Isso economiza espaço no pc
 
+### Copiando arquivos de um container
 
+- Podemos usar o comando: `docker cp`
+
+```bash
+docker cp <path origem> <path destino>
+```
+
+### Verificando processamento
+
+- Utilizamos o comando
+
+### Inspecionando Container
+
+- Verificar as informações do container como: _id, data da criação, imagem, etc..._
+- Utilizamos o comando `docker inspect <container>`
+- Conseguimos ver como o container está configurado
