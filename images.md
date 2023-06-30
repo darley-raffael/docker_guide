@@ -7,7 +7,7 @@
 - https://hub.docker.com -> repositório oficial de imagens
 - Se atentar as imagens que possuem o selo de oficial
 
-## Criando uma imagem
+### Criando uma imagem
 
 - Para criar uma imagem precisamos do arquivo `Dockerfile` na raiz do nosso projeto
 - O arquivo precisa de algumas instruções
@@ -158,3 +158,21 @@ docker run -d -p 3333:3333 --name app_node -it  edb2c3865443
 ```bash
 docker start -i <nome/id imagem>
 ```
+
+### Removendo Imagens 
+```bash
+docker rmi <image id>  
+# Caso a imagem esteja em uso
+docker rmi -f <image id>
+```
+### Removendo Imagens e Containers não utilizados
+```bash
+docker sistem prune
+```
+
+### Removendo container após utilização
+- Utilizamos a flag:  `--rm`
+- O comando seria: `docker run --rm <container>`
+- Isso economiza espaço no pc
+
+
