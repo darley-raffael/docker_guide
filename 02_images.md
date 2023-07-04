@@ -198,3 +198,30 @@ docker cp <path origem> <path destino>
 - Verificar as informações do container como: _id, data da criação, imagem, etc..._
 - Utilizamos o comando `docker inspect <container>`
 - Conseguimos ver como o container está configurado
+
+### Verificando o Processamento do Container
+
+- Utilizamos o comando `docker stats`
+- Conseguimos ver o status, cpu, memória usada pelo container
+
+## 💻 Docker HUB
+
+> Informações de como, criar, atualizar uma imagem de container no docker Hub
+
+### Autenticação no Terminal
+
+- Necessário Criar uma conta no docker hub
+- Autenticar no terminal usamos: `docker login`
+- Inserir o usuário e a senha
+- Podemos enviar as imagens criadas para o HUB
+
+## Enviando Imagens
+
+- Comando utilizado: `docker push <nome imagem>`
+- Necessário criar um repositório no site
+
+## Atualizando As imagens no Hub
+
+- Primeiramente é necessário fazer o build
+- Tocado a tag da imagem para a versão atualizada
+- Depois é feito o push novamente
