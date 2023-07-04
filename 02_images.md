@@ -162,7 +162,7 @@ docker start -i <nome/id imagem>
 ### Removendo Imagens
 
 ```bash
-docker rmi <image id>  
+docker rmi <image id>
 # Caso a imagem esteja em uso
 docker rmi -f <image id>
 ```
@@ -170,12 +170,13 @@ docker rmi -f <image id>
 ### Removendo Imagens e Containers não utilizados
 
 ```bash
-docker sistem prune 
+docker system prune
+
 ```
 
 ### Removendo container após utilização
 
-- Utilizamos a flag:  `--rm`
+- Utilizamos a flag: `--rm`
 - O comando seria: `docker run --rm <container>`
 - Isso economiza espaço no pc
 
@@ -189,7 +190,8 @@ docker cp <path origem> <path destino>
 
 ### Verificando processamento
 
-- Utilizamos o comando
+- Utilizamos o comando: `docker top <container>`
+- Temos acesso a quando foi iniciado, id do processo, descrição do comando CMD
 
 ### Inspecionando Container
 
