@@ -67,5 +67,78 @@ docker run -d -p 80:80 --name php_container --rm -v phpvolume:/var/www/html/mess
   Ex:
 
 ```bash
-
+docker run -d -p 80:80 --name php_container --rm -v /Users/darley.raffael/www/Developer_Learn/docker/project_volume:/var/www/html 402a3d1a9060
 ```
+
+#### Poder Extra do Bing Mounts
+
+- Podemos usar também como forma de manter de pé o nosso container
+- Acompanhar a atualização em tempo real do nosso projeto
+- Com isso não precisamos fazer o build a cada nova atualização
+
+## Lidando com volumes
+
+### Criando volumes automaticamente
+
+- Podemos criar volumes de modo manual;
+- Utilizamos o comando: `docker volume create <nome>`;
+- Desta maneira temos um _*named volume*_ criado;
+- Podemos atrelar algum container na execução do mesmo;
+
+```bash
+# Criando um volume
+docker volume  create volume_test
+
+# Iniciando um container com o volume criado
+docker run -d -p 80:80 --name php_container --rm -v volume_test:/var/www/html 402a3d1a9060
+```
+
+### Listando Volumes
+
+- Comando: `docker volume ls`
+
+### Inspecionando volumes
+
+- Comando: `docker volume inspect`
+  Retorno:
+
+```json
+[
+  {
+    "CreatedAt": "2023-07-13T19:22:02Z",
+    "Driver": "local",
+    "Labels": {},
+    "Mountpoint": "/var/lib/docker/volumes/volume_test/_data",
+    "Name": "volume_test",
+    "Options": {},
+    "Scope": "local"
+  }
+]
+```
+
+### Removendo Volumes
+
+- Comando `docker volume rm <nome>`
+- OBS: os dados do volume são removidos também
+
+#### Removendo volumes em Massa
+
+- Remover volumes não utilizados;
+- Comando:
+
+```bash
+docker volume prune
+```
+
+- Semelhante ao _*prune*_ que remove imagens e containers
+
+### Volume somente leitura
+
+- Criar volume com permissão _somente leitura_
+- Comando:
+
+```bash
+docker run -v volume:data:ro
+```
+
+- O `:ro` é a abreviação de **read only**
