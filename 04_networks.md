@@ -40,3 +40,10 @@ docker network create <nome>
 
 - Está rede será do tipo **bridge**, que é mais utilizado;
 - É possível criar diversas redes;
+- Podemos criar uma rede com um driver específico
+
+```bash
+docker network -d mecvlan name_connection
+```
+
+### Removendo Redes
