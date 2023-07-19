@@ -47,3 +47,7 @@ docker network -d mecvlan name_connection
 ```
 
 ### Removendo Redes
+
+```bash
+docker network rm <id or name>
+```
