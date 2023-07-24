@@ -16,7 +16,7 @@
 
 ## Tipos de rede(drivers)
 
-- **Bredge**: default do Docker, utilizado quando containers precisam se conectar entre si;
+- **Bridge**: default do Docker, utilizado quando containers precisam se conectar entre si;
 - **host**: permite conexão entre um container a máquina que está hosteando o Docker;
 - **macvlan**: permite a conexão de rede de um container;
 - **plugins**: permite a extensões de terceiros para criar outras redes;
@@ -51,3 +51,13 @@ docker network -d mecvlan name_connection
 ```bash
 docker network rm <id or name>
 ```
+
+> Rede fica indisponível para uso, tomar cuidado para caso container estejam usando a rede
+>
+### Removendo redes em massa
+
+```bash
+docker network prune
+```
+
+> Remove todas as redes não utilizadas por container
