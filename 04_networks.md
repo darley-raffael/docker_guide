@@ -53,8 +53,8 @@ docker network rm <id or name>
 ```
 
 > Rede fica indisponível para uso, tomar cuidado para caso container estejam usando a rede
->
-### Removendo redes em massa
+
+#### Removendo redes em massa
 
 ```bash
 docker network prune

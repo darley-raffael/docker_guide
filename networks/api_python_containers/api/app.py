@@ -4,8 +4,7 @@ import requests
 from flask_sqlalchemy import SQLAlchemy
 
 basedir = os.path.abspath(os.path.dirname(__file__))
-path_database = os.path.join(basedir, "database.db")
-print(path_database)
+path_database = os.path.join(basedir, "internal.db")
 
 
 app = flask.Flask(__name__)
